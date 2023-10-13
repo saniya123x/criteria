@@ -1,5 +1,5 @@
 <?php
-include 'dbcon.php'
+include 'dbcon.php';
 $sname = $_POST["StudentName"];
 $year = $_POST["Year"];
 $gprgrm = $_POST["GraduatedProgram"];

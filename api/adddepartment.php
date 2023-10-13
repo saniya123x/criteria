@@ -1,5 +1,5 @@
 <?php
-include 'dbcon.php'
+include 'dbcon.php';
 $user = $_POST["UserName"];
 $pass = $_POST["Password"];
 $name = $_POST["DName"];
