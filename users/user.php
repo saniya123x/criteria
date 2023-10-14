@@ -704,7 +704,7 @@
       <!-- End Navbar -->
       <div class="container p-4">
         <form
-          action=""
+          action="../api/addplacement.php"
           method="POST"
           enctype="multipart/form-data"
           onsubmit="return editValidate()"
@@ -719,7 +719,7 @@
                 type="text"
                 class="form-control px-2"
                 id="ename"
-                name="name"
+                name="StudentName"
                 placeholder="Enter Name"
               />
               <br>
@@ -729,7 +729,7 @@
                type="tel" 
                class="form-control px-2"
                id="pid" 
-               name="pname" 
+               name="Scontact" 
                placeholder="enter number" 
                />
                </div>
@@ -739,7 +739,7 @@
                 type="number"
                 class="form-control px-2"
                 id="year2"
-                name="year2"
+                name="Year"
                 placeholder="Enter year"
               />
             </div>
@@ -749,7 +749,7 @@
                 type="text"
                 class="form-control px-2"
                 id="programid"
-                name="program"
+                name="GraduatedProgram"
                 placeholder="enter course"
               /><br>
 
@@ -759,7 +759,7 @@
                 type="text"
                 class="form-control px-2"
                 id="empid"
-                name="employer"
+                name="EmployerName"
                 placeholder="enter name of employer"
               /><br>
               <div class="form-group">
@@ -768,7 +768,7 @@
                type="tel" 
                class="form-control px-2"
                id="pid1" 
-               name="pname1" 
+               name="Econtact" 
                placeholder="enter phone number" 
                /><br>
                <div class="form-group">
@@ -777,7 +777,7 @@
                 type="number"
                 class="form-control px-2"
                 id="payid"
-                name="payname"
+                name="PayPackage"
                 placeholder="enter pay package"
               />
             </div>

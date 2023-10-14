@@ -539,7 +539,7 @@
       <!-- End Navbar -->
       <div class="container p-4">
         <form
-          action=""
+          action="../api/addprogression.php"
           method="POST"
           enctype="multipart/form-data"
           onsubmit="return editValidate()"
@@ -554,7 +554,7 @@
                 type="text"
                 class="form-control px-2"
                 id="ename"
-                name="name"
+                name="Sname"
                 placeholder="Enter Name"
               />
             </div>
@@ -564,7 +564,7 @@
                 type="text"
                 class="form-control px-2"
                 id="programid"
-                name="program"
+                name="ProgramGraduated"
                 placeholder="enter course"
               /><br>
 
@@ -574,7 +574,7 @@
                 type="text"
                 class="form-control px-2"
                 id="insid"
-                name="insname"
+                name="InstitutionName"
                 placeholder="enter name of institution"
               /><br>
               <div class="form-group">
@@ -583,7 +583,7 @@
                 type="text"
                 class="form-control px-2"
                 id="insid"
-                name="insname"
+                name="ProgrammeName"
                 placeholder="enter name of programme admitted"
               />
             </div>
