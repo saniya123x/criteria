@@ -254,8 +254,10 @@ include '../api/dbcon.php';
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Placement Table</h6>
-            </div>
+            <div class="d-flex justify-content-between">
+              <h6> Placement Table </h6> 
+            <a class="btn bg-gradient-dark mb-0" href="userplace.php"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add</a>
+                </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
