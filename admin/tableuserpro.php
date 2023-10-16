@@ -1,17 +1,4 @@
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.7
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -193,7 +180,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Sign In</span>
+            <span class="nav-link-text ms-1">Sign in</span>
           </a>
         </li>
         <li class="nav-item">
@@ -243,14 +230,19 @@
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Admin</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Progression Details </li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">User</a></li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Progression</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Progression Details </h6>
+          <h6 class="font-weight-bolder mb-0">Progression</h6>
         </nav>
-          
+        
+             
+                
+                 
+                </li>
+              </ul>
             </li>
-          
+          </ul>
         </div>
       </div>
     </nav>
@@ -260,60 +252,65 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Progression Details</h6>
+              <h6>Progression  Table</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name of the student<br>enrolling into higher<br>education</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Department</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Program Graduated from </th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name of the institution joined</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name of the programme <br> admitted to </th>
-                     <th class="text-secondary opacity-7"></th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of student</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">program graduated from</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of institution  joined</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name of programme admitted to</th>
+                      <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                     <td>
-                      <p class=" text-xs text-center  font-weight-bold mb-0">Leya</p>
-                    </td>
-                     <td>
-                        <p class="text-xs text-center  font-weight-bold mb-0">Computer Science</p>
-                        </td>   
-                     <td> 
-                        <p class= " text-xs text-center   font-weight-bold mb-0" >BCS Maths </p>
+                    <td class="align-middle text-center text-sm">
+                      <h6 class="mb-0 text-sm">bhavana</h6>
                       </td>
-                      <td>
-
-                        <p class="text-xs text-center font-weight-bold mb-0">Alameen</p>
+                      <td class="align-middle text-center text-sm">
+                      <h6 class="mb-0 text-sm">bca</h6>
                       </td>
-                      <td >
-                        <p class=" text-xs text-center font-weight-bold mb-0">MSC Maths </p>
+                      <td class="align-middle text-center text-sm">
+                      <h6 class="mb-0 text-sm">tcs</h6>
                       </td>
-                     
-                      <td>
-                        <div class="ms-auto text-end">
-                            <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a><br>
-                            <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-
-                          </div>
+                      <td class="align-middle text-center">
+                        <h6><span class=" text-xs font-weight-bold ">mca</span><h6>
                       </td>
-                    </tr>
-<tr>
-
+                      
+                      <td class="align-middle">
+                      <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                      </td> 
+                
+                    <td class="align-middle">
+                    <div class="ms-auto text-end">
+                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
+                    
+                  </div>
+                      </td> 
 </tr>
-
+                    </tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
         </div>
-      </div> <footer class="footer pt-3  ">
-       
+      </div>
+      <div class="row">
+      </div>
+      <footer class="footer pt-3  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              
+            </div>
+            
+          </div>
+        </div>
       </footer>
     </div>
   </main>

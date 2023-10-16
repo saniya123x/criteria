@@ -1,24 +1,6 @@
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.7
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
-
-
 <?php
 include '../api/dbcon.php';
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -200,7 +182,7 @@ include '../api/dbcon.php';
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Sign In</span>
+            <span class="nav-link-text ms-1">Sign in</span>
           </a>
         </li>
         <li class="nav-item">
@@ -250,14 +232,19 @@ include '../api/dbcon.php';
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Admin</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Placement Details </li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">User</a></li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Placement</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Placement Details </h6>
+          <h6 class="font-weight-bolder mb-0">Placement</h6>
         </nav>
-          
+        
+             
+                
+                 
+                </li>
+              </ul>
             </li>
-          
+          </ul>
         </div>
       </div>
     </nav>
@@ -267,71 +254,86 @@ include '../api/dbcon.php';
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Placement Details</h6>
+              <h6>Placement Table</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Year</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Department</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name of the students placed <br> contact details</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Program graduated from</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name of the employer</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pay package at <br> appointment</th>
-                     <th class="text-secondary opacity-7"></th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of student</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">student phone<br> number</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">year</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">program graduated<br> from</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of employer</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">employer phone<br> number</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">pay package</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">certificate</th>
+                      <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
                     $sql="SELECT * FROM placement";
-                    $result=mysqli_query($conn, $sql);
-                    while($row=mysqli_fetch_array($result)){
-                    ?>
+                    $result = mysqli_query($conn,$sql);
+                    while ($row = mysqli_fetch_array($result)) {
+                      ?>
                     <tr>
-                     <td>
-                      <p class=" text-xs text-center  text-secondary mb-0">
-                      <?php echo $row["Year"] ?></p>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm"><?php echo $row["StudentName"] ?></h6>
+                        </div>
+                        </div>
+                      </td>
+                      <td>
+                      <h6> <p class="text-xs font-weight-bold mb-0 "><?php echo $row["Year"] ?></p><h6>
                     </td>
+                      <td class="align-middle text-center">
+                        <h6><span class=" text-xs font-weight-bold "><?php echo $row["GraduatedProgram"] ?></span><h6>
+                      </td>
+                      <td class="align-middle text-center">
+                       <h6> <span class=" text-xs font-weight-bold"><?php echo $row["EmployerName"] ?></span><h6>
+                      </td>
+                      <td class="align-middle text-center">
+                       <h6> <span class=" text-xs font-weight-bold"><?php echo $row["PayPackage"] ?></span><h6>
+                      </td>
+                      <td class="align-middle text-center">
+                       <h6> <span class=" text-xs font-weight-bold"><?php echo $row["Scontact"] ?></span><h6>
+                      </td>
+                      <td class="align-middle text-center">
+                      <h6> <span class="text-xs font-weight-bold"><?php echo $row["Econtact"] ?></span><h6>
+                      </td>
                      <td>
-                        <p class="text-xs text-center font-weight-bold mb-0">Computer Science</p>
-                        </td>   
-                     <td> 
-                        <p class= " text-xs text-center   font-weight-bold mb-0" ><?php echo $row["StudentName"]?></p>
-                        
-                        <p class="text-xs text-center  text-secondary mb-0"><?php echo $row["Scontact"]?> </p>
-                      </td>
-                      <td>
-
-                        <p class="text-xs text-center font-weight-bold mb-0"><?php echo $row["GraduateProgram"]?></p>
-                      </td>
-                      <td >
-                        <p class=" text-xs text-center font-weight-bold mb-0"><?php echo $row["EmployerName"]?> </p>
-                      </td>
-                      <td >
-                        <p class=" text-xs text-center font-weight-bold mb-0"><?php echo $row["PayPackage"]?></p>
-                      </td>
-                      <td>
-                        <div class="ms-auto text-end">
-                            <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a><br>
-                            <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-
-                          </div>
-                      </td>
+                    <div class="ms-auto text-end">
+                    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a><br>
+                    <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                      
+                  </div>
+                      </td> 
+                    
                     </tr>
                     <?php
                     }
                     ?>
-
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
         </div>
-      </div> <footer class="footer pt-3  ">
-       
+      </div>
+      <div class="row">
+      </div>
+      <footer class="footer pt-3  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              
+            </div>
+            
+          </div>
+        </div>
       </footer>
     </div>
   </main>
