@@ -786,6 +786,7 @@
               <input
                 type="file"
                 name="image"
+                accept="application/pdf"
                 class="form-control"
                 id="eimage"
               />
