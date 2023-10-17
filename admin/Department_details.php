@@ -437,12 +437,8 @@
           action="../api/adddepartment.php"
           method="POST"
           enctype="multipart/form-data"
-          onsubmit="return editValidate()"
-        >
-          <div class="modal-body">
-            <div id="errormsg2"></div>
-            <input type="hidden" name="id" id="cid" />
-            <input type="hidden" name="imageName" id="imageName" />
+          onsubmit="return formValidate()">
+          <div id="errormsg"></div>
             <div class="form-group">
               <label for="text1">Department</label>
               <input
@@ -492,10 +488,8 @@
                   class="form-control px-1"
                   placeholder="Confirm Password"
                   name="Password"
-                  id="pass"
+                  id="Cpass"
                   />
-
-          </div>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
@@ -638,6 +632,49 @@
         </div>
       </div>
     </div>
+    <script> 
+    function formValidate(){
+      const department=document.getElementById("ename");
+      const email=document.getElementById("email1");
+      const username=document.getElementById("user");
+      const password=document.getElementById("pass");
+      const Cpassword=document.getElementById("Cpass");
+
+       if(department.value==""){
+        department.focus();
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        return false;
+       }
+       if(email.value==""){
+        email.focus();
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        return false;
+       }
+       if(username.value==""){
+        username.focus();
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        return false;
+       }
+       if(password.value==""){
+        password.focus();
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        return false;
+       }
+       if(Cpassword.value==""){
+        Cpassword.focus();
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        return false;
+       }
+       if(password.value==Cpassword.value){
+        Cpassword.focus();
+        password.focus();
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">password does not match</div>';
+        return false;
+      }
+    }
+    
+     </script>
+
     <!--   Core JS Files   -->
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
@@ -656,5 +693,5 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
-  </body>
+    </body>
 </html>

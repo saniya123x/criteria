@@ -20,7 +20,7 @@ if (mysqli_query($conn, $sql1)) {
 $sql = "INSERT INTO login (UserName,Password,did)
 VALUES ('$user', '$pass', $lastid)";
 if (mysqli_query($conn, $sql)) {
-  header("location:../admin/Department_details.html");
+  header("location:../admin/Department_details.php");
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
