@@ -257,7 +257,7 @@
     </nav>
     <!-- End Navbar -->
     <div class="container p-4">
-      <form action="../api/addplacement.php" method="POST" enctype="multipart/form-data" onsubmit="return editValidate()">
+      <form action="../api/updateplace.php" method="GET" enctype="multipart/form-data" onsubmit="return editValidate()">
         <div class="modal-body">
           <div id="errormsg2"></div>
           <?php 
@@ -268,6 +268,7 @@
           $result = mysqli_query($conn,$sql);
           $row = mysqli_fetch_array($result)
           ?>
+          <input type="hidden" name="PID"  value="<?php echo $pid ?>" />
           <input type="hidden" name="id" id="cid" />
           <input type="hidden" name="imageName" id="imageName" />
           <div class="form-group">
@@ -280,7 +281,7 @@
             </div>
             <div class="form-group">
               <label for="year2">Year</label>
-              <input type="number" class="form-control px-2" id="year2" name="Year" placeholder="Enter year" value="<?php echo $row["Year"] ?> " />
+              <input type="number" class="form-control px-2" id="year2" name="Year" placeholder="Enter year" value="<?php echo $row["Year"] ?>" />
             </div>
             <div class="form-group">
               <label for="text1">Program Graduated From</label>
@@ -294,7 +295,7 @@
                 id="empid"
                 name="EmployerName"
                 placeholder="enter name of employer"
-                value="<?php echo $row["EmployerName"] ?> "
+                value="<?php echo $row["EmployerName"] ?>"
               /><br>
               <div class="form-group">
               <label for="phone">Enter Employer Phone Number</label><br>
@@ -304,7 +305,7 @@
                id="pid1" 
                name="Econtact" 
                placeholder="enter phone number" 
-               value="<?php echo $row["Econtact"] ?> "
+               value="<?php echo $row["Econtact"] ?>"
                /><br>
                <div class="form-group">
               <label for="text1">Pay Package at Appoinment </label>
@@ -314,7 +315,7 @@
                 id="payid"
                 name="PayPackage"
                 placeholder="enter pay package"
-                value="<?php echo $row["PayPackage"] ?> "
+                value="<?php echo $row["PayPackage"] ?>"
               />
             </div>
             <div class="form-group">
