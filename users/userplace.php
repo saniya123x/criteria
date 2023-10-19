@@ -259,42 +259,42 @@
     <div class="container p-4">
       <form action="../api/addplacement.php" method="POST" enctype="multipart/form-data" onsubmit="return formValidate()">
         <div id="errormsg"></div>
+        <div class="form-group">
+          <label for="text1">Name of Student</label><br>
+          <input type="text" class="form-control px-2" id="ename" name="StudentName" placeholder="Enter Name" />
+          <br>
           <div class="form-group">
-            <label for="text1">Name of Student</label><br>
-            <input type="text" class="form-control px-2" id="ename" name="StudentName" placeholder="Enter Name" />
-            <br>
-            <div class="form-group">
-              <label for="phone">Enter Student Phone Number</label><br>
-              <input type="tel" class="form-control px-2" id="pid" name="Scontact" placeholder="enter number" />
-            </div>
-            <div class="form-group">
-              <label for="year2">Year</label>
-              <input type="number" class="form-control px-2" id="year2" name="Year" placeholder="Enter year" />
-            </div>
-            <div class="form-group">
-              <label for="text1">Program Graduated From</label>
-              <input type="text" class="form-control px-2" id="programid" name="GraduatedProgram" placeholder="enter course" /><br>
+            <label for="phone">Enter Student Phone Number</label><br>
+            <input type="tel" class="form-control px-2" id="pid" name="Scontact" placeholder="enter number" />
+          </div>
+          <div class="form-group">
+            <label for="year2">Year</label>
+            <input type="number" class="form-control px-2" id="year2" name="Year" placeholder="Enter year" />
+          </div>
+          <div class="form-group">
+            <label for="text1">Program Graduated From</label>
+            <input type="text" class="form-control px-2" id="programid" name="GraduatedProgram" placeholder="enter course" /><br>
 
+            <div class="form-group">
+              <label for="text1">Name of Employer </label>
+              <input type="text" class="form-control px-2" id="empid" name="EmployerName" placeholder="enter name of employer" /><br>
               <div class="form-group">
-                <label for="text1">Name of Employer </label>
-                <input type="text" class="form-control px-2" id="empid" name="EmployerName" placeholder="enter name of employer" /><br>
+                <label for="phone">Enter Employer Phone Number</label><br>
+                <input type="tel" class="form-control px-2" id="pid1" name="Econtact" placeholder="enter phone number" /><br>
                 <div class="form-group">
-                  <label for="phone">Enter Employer Phone Number</label><br>
-                  <input type="tel" class="form-control px-2" id="pid1" name="Econtact" placeholder="enter phone number" /><br>
-                  <div class="form-group">
-                    <label for="text1">Pay Package at Appoinment </label>
-                    <input type="number" class="form-control px-2" id="payid" name="PayPackage" placeholder="enter pay package" />
-                  </div>
-                  <div class="form-group">
-                    <label for="file1">Upload certificate</label>
-                    <input type="file" name="image" accept="application/pdf" class="form-control" id="eimage" />
-                  </div>
+                  <label for="text1">Pay Package at Appoinment </label>
+                  <input type="number" class="form-control px-2" id="payid" name="PayPackage" placeholder="enter pay package" />
                 </div>
-                <div class="modal-footer border-top-0 d-flex justify-content-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group">
+                  <label for="file1">Upload certificate</label>
+                  <input type="file" name="image" accept="application/pdf" class="form-control" id="eimage" />
                 </div>
+              </div>
+              <div class="modal-footer border-top-0 d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
       </form>
-    
+
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
@@ -370,51 +370,79 @@
     </div>
   </div>
   <script>
+    const fileInput = document.getElementById("eimage");
+
+    function imgValidate() {
+      {
+        var filePath = fileInput.value;
+        var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+        if (!allowedExtensions.exec(filePath)) {
+          fileInput.value = "";
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> It is not image file</div>'
+          return false;
+        }
+        if (fileInput.files[0].size > 500000) {
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Uploaded image is too large</div>'
+          fileInput.value = "";
+          return false;
+        }
+        document.getElementById("errormsg").innerHTML = ""
+      }
+
+    }
+    fileInput.onchange = function() {
+      imgValidate()
+    };
+
     function formValidate() {
-      const stname=document.getElementById("ename");
-      const phid=document.getElementById("pid");
-      const year=document.getElementById("year2");
-      const prograform=document.getElementById("programid");
-      const empname=document.getElementById("empid");
-      const empphno=document.getElementById("pid1");
-      const paypackap=document.getElementById("payid");
-      if (stname.value =="") {
+      const stname = document.getElementById("ename");
+      const phid = document.getElementById("pid");
+      const year = document.getElementById("year2");
+      const prograform = document.getElementById("programid");
+      const empname = document.getElementById("empid");
+      const empphno = document.getElementById("pid1");
+      const paypackap = document.getElementById("payid");
+      if (stname.value == "") {
         stname.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
         return false;
       }
-      if (phid.value =="") {
+      if (phid.value == "") {
         phid.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
         return false;
       }
-      if (year.value =="") {
+      if (year.value == "") {
         year.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
         return false;
       }
-      if (prograform.value =="") {
+      if (prograform.value == "") {
         prograform.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
         return false;
       }
-      if (empname.value =="") {
+      if (empname.value == "") {
         empname.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
         return false;
       }
-      if (empphno.value =="") {
+      if (empphno.value == "") {
         empphno.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
         return false;
       }
-      if (paypackap.value =="") {
+      if (paypackap.value == "") {
         paypackap.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        return false;
+      }
+      if (choosefile.value == "") {
+        choosefile.focus();
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Select a file</div>'
         return false;
       }
     }
-  
   </script>
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
