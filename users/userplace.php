@@ -374,7 +374,7 @@
       const stname=document.getElementById("ename");
       const phid=document.getElementById("pid");
       const year=document.getElementById("year2");
-      const prograform=document.getElementById("grogramid");
+      const prograform=document.getElementById("programid");
       const empname=document.getElementById("empid");
       const empphno=document.getElementById("pid1");
       const paypackap=document.getElementById("payid");

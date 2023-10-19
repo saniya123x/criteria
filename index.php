@@ -16,7 +16,7 @@ if ($res=mysqli_query($conn, $sql)) {
             header("location:admin/Department_details.html");
         }
         else{
-            header("location:users/user.php");
+            header("location:users/tableuserplace.php");
         }
         }else{
         $err="wrong username and password!";
