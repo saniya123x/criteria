@@ -489,7 +489,7 @@
                   placeholder="Confirm Password"
                   name="Password"
                   id="Cpass"
-                  />
+                  /></br>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
@@ -665,7 +665,7 @@
         document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
         return false;
        }
-       if(password.value==Cpassword.value){
+       if(password.value!=Cpassword.value){
         Cpassword.focus();
         password.focus();
         document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">password does not match</div>';

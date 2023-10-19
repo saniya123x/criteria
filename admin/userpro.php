@@ -522,7 +522,7 @@
               class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5"
             >
               <li class="breadcrumb-item text-sm">
-                <a class="opacity-5 text-dark" href="javascript:;">Pages</a>
+                <a class="opacity-5 text-dark" href="javascript:;">Admin</a>
               </li>
               <li
                 class="breadcrumb-item text-sm text-dark active"
@@ -542,8 +542,10 @@
           action="../api/addprogression.php"
           method="POST"
           enctype="multipart/form-data"
-          onsubmit="return editValidate()"
+          onsubmit="return FormValidate()"
+          
         >
+        <div id="errormsg"></div>
           <div class="modal-body">
             <div id="errormsg2"></div>
             <input type="hidden" name="id" id="cid" />
@@ -582,7 +584,7 @@
               <input
                 type="text"
                 class="form-control px-2"
-                id="insid"
+                id="pgmid"
                 name="ProgrammeName"
                 placeholder="enter name of programme admitted"
               />
@@ -739,6 +741,33 @@
         </div>
       </div>
     </div>
+    <script>
+      function FormValidate(){
+        const username=document.getElementById("ename");
+        const program =document.getElementById("programid");
+      const institution=document.getElementById("insid");
+      const pgmadmitted=document.getElementById("pgmid");
+      if(username.value==""){
+        username.focus();
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        return false;
+      }
+      if(program.value==""){
+        program.focus();
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        return false;
+      }
+      if(institution.value==""){
+        institution.focus();
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        return false;
+      }
+      if(pgmadmitted.value==""){
+        pgmadmitted.focus();
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        return false;
+      }
+      }
     <!--   Core JS Files   -->
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
