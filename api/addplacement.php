@@ -16,7 +16,7 @@ if ($_FILES["image"]["size"] > 500000) {
   echo "Sorry, your file is too large.";
 } else {
   $sql = "INSERT INTO placement (StudentName,Year,GraduatedProgram,EmployerName,PayPackage,Scontact,Econtact,did)
-VALUES ('$sname', $year, '$gprgrm', '$ename', $pay, '$scon','$econ',$did )";
+VALUES ('$sname', $year, '$gprgrm', '$ename', $pay, '$scon','$econ',$did)";
   if (mysqli_query($conn, $sql)) {
     $lastid = mysqli_insert_id($conn);
     $target_dir = "../upload/";
@@ -24,6 +24,8 @@ VALUES ('$sname', $year, '$gprgrm', '$ename', $pay, '$scon','$econ',$did )";
     $FileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     $target = $target_dir . "placement-" . $lastid . "." . $FileType;
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target)) {
+       $sql1= " UPDATE placement set Upload= 'placement-" . $lastid . "." . $FileType ."' WHERE PID = $lastid" ;
+       mysqli_query($conn, $sql1);
       header("location:../users/tableuserplace.php");
     }
   } else {

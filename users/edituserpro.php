@@ -539,7 +539,7 @@
       <!-- End Navbar -->
       <div class="container p-4">
         <form
-          action="../api/addprogression.php"
+          action="../api/updateprgrsn.php"
           method="POST"
           enctype="multipart/form-data"
           onsubmit="return editValidate()"
@@ -554,8 +554,9 @@
           $result = mysqli_query($conn,$sql);
           $row = mysqli_fetch_array($result)
             ?>
+            <input type="hidden" name="PRID"  value="<?php echo $prid ?>" />
             <input type="hidden" name="id" id="cid" />
-            <input type="hidden" name="imageName" id="imageName" />
+            <input type="hidden" name="Upload" id="imageName" value="<?php echo $row["Upload"] ?>" />
             <div class="form-group">
               <label for="text1">Name of Student Entrolling into Higher Education</label><br>
               <input

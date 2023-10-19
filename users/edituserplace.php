@@ -257,7 +257,7 @@
     </nav>
     <!-- End Navbar -->
     <div class="container p-4">
-      <form action="../api/updateplace.php" method="GET" enctype="multipart/form-data" onsubmit="return editValidate()">
+      <form action="../api/updateplace.php" method="POST" enctype="multipart/form-data" onsubmit="return editValidate()">
         <div class="modal-body">
           <div id="errormsg2"></div>
           <?php 
@@ -270,7 +270,7 @@
           ?>
           <input type="hidden" name="PID"  value="<?php echo $pid ?>" />
           <input type="hidden" name="id" id="cid" />
-          <input type="hidden" name="imageName" id="imageName" />
+          <input type="hidden" name="Upload" id="imageName" value="<?php echo $row["Upload"] ?>" />
           <div class="form-group">
             <label for="text1">Name of Student</label><br>
             <input type="text" class="form-control px-2" id="ename" name="StudentName" placeholder="Enter Name" value="<?php echo $row["StudentName"] ?> "/>
