@@ -279,7 +279,7 @@
               </div>
               <div class="form-group">
                 <label for="file1">Upload certificate</label>
-                <input type="file" name="image" class="form-control" id="eimage" />
+                <input type="file" name="image" class="form-control" id="eimage" accept="image/png, image/jpeg" />
               </div>
             </div>
             <div class="modal-footer border-top-0 d-flex justify-content-center">
@@ -362,32 +362,59 @@
     </div>
   </div>
   <script>
+    const fileInput = document.getElementById("eimage");
+
+    function imgValidate() {
+      {
+        var filePath = fileInput.value;
+        var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+        if (!allowedExtensions.exec(filePath)) {
+          fileInput.value = "";
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> It is not image file</div>'
+          return false;
+        }
+        if (fileInput.files[0].size > 500000) {
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Uploaded image is too large</div>'
+          fileInput.value = "";
+          return false;
+        }
+        document.getElementById("errormsg").innerHTML = ""
+      }
+    }
+    fileInput.onchange = function() {imgValidate()};
+
     function formValidate() {
       const sname = document.getElementById("ename");
       const program = document.getElementById("programid");
       const instname = document.getElementById("insid");
       const promname = document.getElementById("insid");
+      const choosefile = document.getElementById("eimage");
       if (sname.value == "") {
         sname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
         return false;
       }
 
       if (program.value == "") {
         program.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
         return false;
       }
 
       if (instname.value == "") {
         instname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
         return false;
       }
 
       if (promname.value == "") {
         promname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
+        return false;
+      }
+      if (choosefile.value == "") {
+        choosefile.focus();
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Select a file</div>'
         return false;
       }
     }
