@@ -1,4 +1,6 @@
-
+<?php
+include '../api/dbcon.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -269,22 +271,27 @@
                     </tr>
                   </thead>
                   <tbody>
+                  <?php
+                    $sql="SELECT * FROM progression";
+                    $result = mysqli_query($conn,$sql);
+                    while ($row = mysqli_fetch_array($result)) {
+                      ?>
                     <tr>
                     <td class="align-middle text-center text-sm">
-                      <h6 class="mb-0 text-sm">bhavana</h6>
+                      <h6 class="mb-0 text-sm"><?php echo $row["Sname"] ?></h6>
                       </td>
                       <td class="align-middle text-center text-sm">
-                      <h6 class="mb-0 text-sm">bca</h6>
+                      <h6 class="mb-0 text-sm"><?php echo $row["ProgramGraduated"] ?></h6>
                       </td>
                       <td class="align-middle text-center text-sm">
-                      <h6 class="mb-0 text-sm">tcs</h6>
+                      <h6 class="mb-0 text-sm"><?php echo $row["InstitutionName"] ?></h6>
                       </td>
                       <td class="align-middle text-center">
-                        <h6><span class=" text-xs font-weight-bold ">mca</span><h6>
+                        <h6><span class=" text-xs font-weight-bold "><?php echo $row["ProgrammeName"] ?></span><h6>
                       </td>
                       
                       <td class="align-middle">
-                      <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                      <a class="btn btn-link text-dark px-3 mb-0" href="editadminpro.php?prid=<?php echo $row['PRID'] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                       </td> 
                 
                     <td class="align-middle">
@@ -295,6 +302,9 @@
                       </td> 
 </tr>
                     </tr>
+                    <?php
+                    }
+                    ?>
                   </tbody>
                 </table>
               </div>

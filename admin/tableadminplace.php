@@ -309,7 +309,7 @@ include '../api/dbcon.php';
                      <td>
                     <div class="ms-auto text-end">
                     <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a><br>
-                    <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                    <a class="btn btn-link text-dark px-3 mb-0" href="editadminplace.php?pid=<?php echo $row['PID'] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                       
                   </div>
                       </td> 
