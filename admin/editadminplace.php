@@ -532,8 +532,9 @@
           ?>
 
           <label for="ename">Name of Student</label><br>
+          <input type="hidden" name="type" value="admin"/>
           <input type="hidden" name="PID"  value="<?php echo $pid ?>" />
-          <input type="text" class="form-control px-2" id="ename" name="StudentName" placeholder="Enter Name" />
+          <input type="text" class="form-control px-2" id="ename" name="StudentName" placeholder="Enter Name" value="<?php echo $row["StudentName"] ?>"/>
           <input type="hidden" name="Upload" id="imageName" value="<?php echo $row["Upload"] ?>" />
 
         </div>
