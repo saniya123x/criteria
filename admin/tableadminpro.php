@@ -101,7 +101,7 @@ include '../api/dbcon.php';
                 
                     <td class="align-middle">
                     <div class="ms-auto text-end">
-                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
+                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="../api/deleteprgrsn.php?PRID=<?php echo $row['PRID'] ?>&type=admin"><i class="far fa-trash-alt me-2"></i>Delete</a>
                     
                   </div>
                       </td> 
