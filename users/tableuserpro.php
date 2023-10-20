@@ -296,7 +296,7 @@ include '../api/dbcon.php';
                 
                     <td class="align-middle">
                     <div class="ms-auto text-end">
-                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
+                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="../api/deleteprgrsn.php?prid=<?php echo $row['PRID'] ?>&type=user"><i class="far fa-trash-alt me-2"></i>Delete</a>
                     <a class="btn btn-link text-dark px-3 mb-0" href="edituserpro.php?prid=<?php echo $row["PRID"] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                   </div>
                       </td> 
