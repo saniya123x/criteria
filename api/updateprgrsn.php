@@ -1,6 +1,7 @@
 <?php
 include 'dbcon.php';
 $prid = $_POST["PRID"];
+$type = $_POST["type"];
 $stname = $_POST["Sname"];
 $pgrad = $_POST["ProgramGraduated"];
 $iname = $_POST["InstitutionName"];
@@ -21,8 +22,12 @@ if (mysqli_query($conn, $sql)) {
     $sql1= " UPDATE progression set Upload= 'progression-" . $prid . "." . $FileType ."' WHERE PRID = $prid" ;
     mysqli_query($conn, $sql1);
   }
-}
+}if ($type == "admin") {
+
+  header("location:../admin/tableadminpro.php");
+} else {
   header("location:../users/tableuserpro.php");
+}
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
