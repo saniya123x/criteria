@@ -145,25 +145,6 @@
                
               />
             </div>
-            <div class="form-group">
-                <label for="text4">Password </label>
-                <input
-                type="password"
-                  class="form-control px-1"
-                  placeholder="Enter Password"
-                  name="Password"
-                  id="pass"
-                  />
-            </div>
-            <div class="form-group">
-                <label for="text5">Confirm Password </label>
-                <input
-                type="password"
-                  class="form-control px-1"
-                  placeholder="Confirm Password"
-                  name="Password"
-                  id="Cpass"
-                  /></br>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
@@ -330,8 +311,7 @@
       const department=document.getElementById("ename");
       const email=document.getElementById("email1");
       const username=document.getElementById("user");
-      const password=document.getElementById("pass");
-      const Cpassword=document.getElementById("Cpass");
+
 
        if(department.value==""){
         department.focus();
@@ -348,12 +328,7 @@
         document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
         return false;
        }
-       if(password.value!=Cpassword.value){
-        Cpassword.focus();
-        password.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">password does not match</div>';
-        return false;
-      }
+      
     }
     
      </script>

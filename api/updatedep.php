@@ -2,7 +2,6 @@
 include 'dbcon.php';
 $did = $_POST["did"];
 $user = $_POST["UserName"];
-$pass = $_POST["Password"];
 $name = $_POST["DName"];
 $email = $_POST["Email"];
 $sql1 = "UPDATE department

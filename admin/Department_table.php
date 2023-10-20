@@ -96,7 +96,7 @@ include '../api/dbcon.php';
                       </td>
                      <td>
                     <div class="ms-auto text-end">
-                    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a><br>
+                    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="deletedep.php?did=<?php echo $row['did'] ?>&type=admin"><i class="far fa-trash-alt me-2"></i>Delete</a><br>
                     <a class="btn btn-link text-dark px-3 mb-0" href="editdep.php?did=<?php echo $row['did'] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                       
                   </div>
