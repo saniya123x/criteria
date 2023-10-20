@@ -6,8 +6,8 @@ $name = $_POST["DName"];
 $email = $_POST["Email"];
 $lastid = "";
 
-$sql1 = "INSERT INTO department (Dname,Email)
-VALUES ('$name', '$email')";
+$sql1 = "INSERT INTO department (Dname,Email,UserName)
+VALUES ('$name', '$email', '$user')";
 
 if (mysqli_query($conn, $sql1)) {
     $lastid = mysqli_insert_id($conn);
@@ -20,7 +20,7 @@ if (mysqli_query($conn, $sql1)) {
 $sql = "INSERT INTO login (UserName,Password,did)
 VALUES ('$user', '$pass', $lastid)";
 if (mysqli_query($conn, $sql)) {
-  header("location:../admin/Department_details.php");
+  header("location:../admin/Department_table.php");
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
