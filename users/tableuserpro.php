@@ -77,33 +77,32 @@ include '../api/dbcon.php';
                     $sql = "SELECT * FROM progression";
                     $result = mysqli_query($conn, $sql);
                     while ($row = mysqli_fetch_array($result)) {
-                    ?>
-                      <tr>
-                        <td class="align-middle text-center text-sm">
-                          <h6 class="mb-0 text-sm"><?php echo $row["Sname"] ?></h6>
-                        </td>
-                        <td class="align-middle text-center text-sm">
-                          <h6 class="mb-0 text-sm"><?php echo $row["ProgramGraduated"] ?></h6>
-                        </td>
-                        <td class="align-middle text-center text-sm">
-                          <h6 class="mb-0 text-sm"><?php echo $row["InstitutionName"] ?></h6>
-                        </td>
-                        <td class="align-middle text-center">
-                          <h6><span class=" text-xs font-weight-bold "><?php echo $row["ProgrammeName"] ?></span>
-                            <h6>
-
-                        </td>
-
-
-
-                        <td class="align-middle">
-                          <div class="ms-auto text-end">
-                            <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                            <a class="btn btn-link text-dark px-3 mb-0" href="edituserpro.php?prid=<?php echo $row["PRID"] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                          </div>
-                        </td>
-                      </tr>
-                      </tr>
+                      ?>
+                    <tr>
+                    <td class="align-middle text-center text-sm">
+                      <h6 class="mb-0 text-sm"><?php echo $row["Sname"] ?></h6>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                      <h6 class="mb-0 text-sm"><?php echo $row["ProgramGraduated"] ?></h6>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                      <h6 class="mb-0 text-sm"><?php echo $row["InstitutionName"] ?></h6>
+                      </td>
+                      <td class="align-middle text-center">
+                        <h6><span class=" text-xs font-weight-bold "><?php echo $row["ProgrammeName"] ?></span><h6>
+                        
+                      </td>
+                      
+                       
+                
+                    <td class="align-middle">
+                    <div class="ms-auto text-end">
+                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="../api/deleteprgrsn.php?prid=<?php echo $row['PRID'] ?>&type=user"><i class="far fa-trash-alt me-2"></i>Delete</a>
+                    <a class="btn btn-link text-dark px-3 mb-0" href="edituserpro.php?prid=<?php echo $row["PRID"] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                  </div>
+                      </td> 
+</tr>
+                    </tr>
                     <?php
                     }
                     ?>

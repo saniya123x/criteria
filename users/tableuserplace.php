@@ -113,7 +113,7 @@ include '../api/dbcon.php';
                       </td>
                      <td>
                     <div class="ms-auto text-end">
-                    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a><br>
+                    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="../api/deleteplace.php?PID=<?php echo $row['PID'] ?>&type=user"><i class="far fa-trash-alt me-2"></i>Delete</a><br>
                     <a class="btn btn-link text-dark px-3 mb-0" href="edituserplace.php?pid=<?php echo $row["PID"] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                       
                   </div>
