@@ -554,6 +554,7 @@
           $result = mysqli_query($conn,$sql);
           $row = mysqli_fetch_array($result)
             ?>
+            <input type="hidden" name="type" value="user"/>
             <input type="hidden" name="PRID"  value="<?php echo $prid ?>" />
             <input type="hidden" name="id" id="cid" />
             <input type="hidden" name="Upload" id="imageName" value="<?php echo $row["Upload"] ?>" />
