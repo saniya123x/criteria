@@ -86,7 +86,8 @@
             </ol>
             <h6 class="font-weight-bolder mb-0">Department Details</h6>
           </nav>
-          
+          <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;Logout</a>
+
         </div>
       </nav>
       <!-- End Navbar -->
@@ -118,11 +119,11 @@
               />
             </div>
             <div class="form-group">
-              <label for="text3">username</label>
+              <label for="text3">UserName</label>
               <input
               type="text"
                 class="form-control px-1"
-                placeholder="Enter username"
+                placeholder="Enter UserName"
                 name="UserName"
                 id="user"
                 
@@ -294,7 +295,7 @@
     function formValidate(){
       const department=document.getElementById("ename");
       const email=document.getElementById("email1");
-      const username=document.getElementById("user");
+      const UserName=document.getElementById("user");
       const password=document.getElementById("pass");
       const Cpassword=document.getElementById("Cpass");
 
@@ -308,8 +309,8 @@
         document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
         return false;
        }
-       if(username.value==""){
-        username.focus();
+       if(UserName.value==""){
+        UserName.focus();
         document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
         return false;
        }
