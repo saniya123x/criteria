@@ -55,7 +55,7 @@
           </ol>
           <h6 class="font-weight-bolder mb-0">PROGRESSION</h6>
         </nav>
-
+        <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;logout</a>
 
       </div>
     </nav>
@@ -63,7 +63,7 @@
     <div class="container p-4">
       <form action="../api/updateprgrsn.php" method="POST" enctype="multipart/form-data" onsubmit="return formValidate()">
         <div class="modal-body">
-          <div id="errormsg2"></div>
+          <div id="errormsg"></div>
           <?php
           include '../api/dbcon.php';
           $prid = $_GET["prid"];
@@ -206,25 +206,25 @@
       const promname = document.getElementById("prom");
       if (sname.value == "") {
         sname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS !</div>'
         return false;
       }
 
       if (program.value == "") {
         program.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS !</div>'
         return false;
       }
 
       if (instname.value == "") {
         instname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS !</div>'
         return false;
       }
 
       if (promname.value == "") {
         promname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS !</div>'
         return false;
       }
     }

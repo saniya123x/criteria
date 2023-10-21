@@ -55,12 +55,14 @@
           </ol>
           <h6 class="font-weight-bolder mb-0">PLACEMENT</h6>
         </nav>
+        <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;logout</a>
+      </div>
     </nav>
     <!-- End Navbar -->
     <div class="container p-4">
       <form action="../api/updateplace.php" method="POST" enctype="multipart/form-data" onsubmit="return formValidate()">
         <div class="modal-body">
-          <div id="errormsg2"></div>
+          <div id="errormsg"></div>
           <?php
           include '../api/dbcon.php';
           $pid = $_GET["pid"];
@@ -220,37 +222,37 @@
       const paypackap = document.getElementById("payid");
       if (stname.value == "") {
         stname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
         return false;
       }
       if (phid.value == "") {
         phid.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
         return false;
       }
       if (year.value == "") {
         year.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
         return false;
       }
       if (prograform.value == "") {
         prograform.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
         return false;
       }
       if (empname.value == "") {
         empname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
         return false;
       }
       if (empphno.value == "") {
         empphno.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
         return false;
       }
       if (paypackap.value == "") {
         paypackap.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
         return false;
       }
     }

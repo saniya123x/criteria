@@ -42,15 +42,7 @@ include '../api/dbcon.php';
           </ol>
           <h6 class="font-weight-bolder mb-0">Placement</h6>
         </nav>
-        
-             
-                
-                 
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+        <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;logout</a>
       </div>
     </nav>
     <!-- End Navbar -->
@@ -59,90 +51,97 @@ include '../api/dbcon.php';
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-            <div class="d-flex justify-content-between">
-              <h6> Placement Table </h6> 
-            <a class="btn bg-gradient-dark mb-0" href="userplace.php"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add</a>
-                </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of student</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">student phone<br> number</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">year</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">program graduated<br> from</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of employer</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">employer phone<br> number</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">pay package</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">certificate</th>
-                      <th class="text-secondary opacity-7"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                    $sql="SELECT * FROM placement";
-                    $result = mysqli_query($conn,$sql);
-                    while ($row = mysqli_fetch_array($result)) {
+              <div class="d-flex justify-content-between">
+                <h6> Placement Table </h6>
+                <a class="btn bg-gradient-dark mb-0" href="userplace.php"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add</a>
+              </div>
+              <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive p-0">
+                  <table class="table align-items-center mb-0">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of student</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">student phone<br> number</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">year</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">program graduated<br> from</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of employer</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">employer phone<br> number</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">pay package</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">certificate</th>
+                        <th class="text-secondary opacity-7"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                       $sql = 'SELECT * FROM placement where did=$_SESSION["did"]';
+                      $result = mysqli_query($conn, $sql);
+                      while ($row = mysqli_fetch_array($result)) {
                       ?>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm"><?php echo $row["StudentName"] ?></h6>
-                        </div>
-                        </div>
-                      </td>
-                      <td>
-                      <h6> <p class="text-xs font-weight-bold mb-0 "><?php echo $row["Year"] ?></p><h6>
-                    </td>
-                      <td class="align-middle text-center">
-                        <h6><span class=" text-xs font-weight-bold "><?php echo $row["GraduatedProgram"] ?></span><h6>
-                      </td>
-                      <td class="align-middle text-center">
-                       <h6> <span class=" text-xs font-weight-bold"><?php echo $row["EmployerName"] ?></span><h6>
-                      </td>
-                      <td class="align-middle text-center">
-                       <h6> <span class=" text-xs font-weight-bold"><?php echo $row["PayPackage"] ?></span><h6>
-                      </td>
-                      <td class="align-middle text-center">
-                       <h6> <span class=" text-xs font-weight-bold"><?php echo $row["Scontact"] ?></span><h6>
-                      </td>
-                      <td class="align-middle text-center">
-                      <h6> <span class="text-xs font-weight-bold"><?php echo $row["Econtact"] ?></span><h6>
-                      </td>
-                     <td>
-                    <div class="ms-auto text-end">
-                    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="../api/deleteplace.php?PID=<?php echo $row['PID'] ?>&type=user"><i class="far fa-trash-alt me-2"></i>Delete</a><br>
-                    <a class="btn btn-link text-dark px-3 mb-0" href="edituserplace.php?pid=<?php echo $row["PID"] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                      
-                  </div>
-                      </td> 
-                    
-                    </tr>
-                    <?php
-                    }
-                    ?>
-                  </tbody>
-                </table>
+                        <tr>
+                          <td>
+                            <div class="d-flex px-2 py-1">
+                              <div class="d-flex flex-column justify-content-center">
+                                <h6 class="mb-0 text-sm"><?php echo $row["StudentName"] ?></h6>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <h6>
+                              <p class="text-xs font-weight-bold mb-0 "><?php echo $row["Year"] ?></p>
+                              <h6>
+                          </td>
+                          <td class="align-middle text-center">
+                            <h6><span class=" text-xs font-weight-bold "><?php echo $row["GraduatedProgram"] ?></span>
+                              <h6>
+                          </td>
+                          <td class="align-middle text-center">
+                            <h6> <span class=" text-xs font-weight-bold"><?php echo $row["EmployerName"] ?></span>
+                              <h6>
+                          </td>
+                          <td class="align-middle text-center">
+                            <h6> <span class=" text-xs font-weight-bold"><?php echo $row["PayPackage"] ?></span>
+                              <h6>
+                          </td>
+                          <td class="align-middle text-center">
+                            <h6> <span class=" text-xs font-weight-bold"><?php echo $row["Scontact"] ?></span>
+                              <h6>
+                          </td>
+                          <td class="align-middle text-center">
+                            <h6> <span class="text-xs font-weight-bold"><?php echo $row["Econtact"] ?></span>
+                              <h6>
+                          </td>
+                          <td>
+                            <div class="ms-auto text-end">
+                              <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="../api/deleteplace.php?PID=<?php echo $row['PID'] ?>&type=user"><i class="far fa-trash-alt me-2"></i>Delete</a><br>
+                              <a class="btn btn-link text-dark px-3 mb-0" href="edituserplace.php?pid=<?php echo $row["PID"] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+
+                            </div>
+                          </td>
+
+                        </tr>
+                      <?php
+                      }
+                      ?>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-      </div>
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              
-            </div>
-            
-          </div>
+        <div class="row">
         </div>
-      </footer>
-    </div>
+        <footer class="footer pt-3  ">
+          <div class="container-fluid">
+            <div class="row align-items-center justify-content-lg-between">
+              <div class="col-lg-6 mb-lg-0 mb-4">
+
+              </div>
+
+            </div>
+          </div>
+        </footer>
+      </div>
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
