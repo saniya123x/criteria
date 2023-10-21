@@ -67,6 +67,7 @@
         <div id="errormsg"></div>
         <div class="form-group">
           <label for="text1">Name of Student Entrolling into Higher Education</label><br>
+          <input type="hidden" name="type" value="admin" />
           <input type="text" class="form-control px-2" id="ename" name="Sname" placeholder="Enter Name" />
         </div>
         <div class="form-group">

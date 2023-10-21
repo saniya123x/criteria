@@ -76,7 +76,7 @@ include '../api/dbcon.php';
                   </thead>
                   <tbody>
                   <?php
-                    $sql="SELECT login.did,DName,Email,Username FROM login INNER JOIN department ON login.did=department.did";
+                    $sql="SELECT login.did,DName,Email,login.UserName FROM login INNER JOIN department ON login.did=department.did";
                     $result = mysqli_query($conn,$sql);
                     while ($row = mysqli_fetch_array($result)) {
                       ?>
@@ -92,11 +92,11 @@ include '../api/dbcon.php';
                       <h6 class="text-xs font-weight-bold mb-0 "><?php echo $row["Email"]?><h6>
                     </td>
                       <td class="align-middle text-center">
-                        <h6><span class=" text-xs font-weight-bold "><?php echo $row["Username"]?></span><h6>
+                        <h6><span class=" text-xs font-weight-bold "><?php echo $row["UserName"]?></span><h6>
                       </td>
                      <td>
                     <div class="ms-auto text-end">
-                    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="deletedep.php?did=<?php echo $row['did'] ?>&type=admin"><i class="far fa-trash-alt me-2"></i>Delete</a><br>
+                    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="../api/deletedep.php?did=<?php echo $row['did'] ?>&type=admin"><i class="far fa-trash-alt me-2"></i>Delete</a><br>
                     <a class="btn btn-link text-dark px-3 mb-0" href="editdep.php?did=<?php echo $row['did'] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                       
                   </div>

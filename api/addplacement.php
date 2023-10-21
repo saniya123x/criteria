@@ -10,7 +10,7 @@ $scon = $_POST["Scontact"];
 $econ = $_POST["Econtact"];
 
 $did = $_SESSION['did'];
-
+$type= $_POST["type"];
 // Check file size
 if ($_FILES["image"]["size"] > 500000) {
   echo "Sorry, your file is too large.";
@@ -26,7 +26,12 @@ VALUES ('$sname', $year, '$gprgrm', '$ename', $pay, '$scon','$econ',$did)";
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target)) {
        $sql1= " UPDATE placement set Upload= 'placement-" . $lastid . "." . $FileType ."' WHERE PID = $lastid" ;
        mysqli_query($conn, $sql1);
-      header("location:../users/tableuserplace.php");
+       if ($type == "admin") {
+
+        header("location:../admin/tableadminplace.php");
+      } else {
+        header("location:../users/tableuserplace.php");
+      }
     }
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

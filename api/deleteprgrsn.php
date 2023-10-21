@@ -1,14 +1,22 @@
 <?php
 include 'dbcon.php';
-$prid = $_GET["PRID"];
+$prid = $_GET["prid"];
 $type = $_GET["type"];
-$sql ="DELETE FROM placement WHERE PRID=$prid";
+
+$sql2="SELECT Upload FROM progression where PRID=$prid";
+$result= mysqli_query($conn, $sql2);
+$row = mysqli_fetch_array($result);
+$store= $row ["Upload"];
+$fileName = "../upload/" . $store;
+    unlink($fileName);
+
+$sql ="DELETE FROM progression WHERE PRID=$prid";
 if (mysqli_query($conn, $sql)) {
   if ($type == "admin") {
 
-    header("location:../admin/tableadminplace.php");
+    header("location:../admin/tableadminpro.php");
   } else {
-    header("location:../users/tableuserplace.php");
+    header("location:../users/tableuserpro.php");
   }
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);

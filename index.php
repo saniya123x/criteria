@@ -13,7 +13,7 @@ if ($res=mysqli_query($conn, $sql)) {
         $row = mysqli_fetch_assoc($res);
         $_SESSION['did'] = $row["did"];
         if($row["did"] == 1){
-            header("location:admin/Department_details.html");
+            header("location:admin/Department_details.php");
         }
         else{
             header("location:users/tableuserplace.php");

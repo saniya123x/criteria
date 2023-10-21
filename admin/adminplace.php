@@ -74,7 +74,9 @@
       <form action="../api/addplacement.php" method="POST" enctype="multipart/form-data" onsubmit="return validate()">
         <div id="errormsg"></div>
         <div class="form-group">
+
           <label for="ename">Name of Student</label><br>
+          <input type="hidden" name="type" value="admin" />
           <input type="text" class="form-control px-2" id="ename" name="StudentName" placeholder="Enter Name" />
         </div>
         <div class="form-group">

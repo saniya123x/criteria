@@ -104,7 +104,7 @@
           include '../api/dbcon.php';
           $did= $_GET["did"];
         
-          $sql="SELECT DName, Email, Username FROM department INNER JOIN login where department.did=login.did";
+          $sql="SELECT department.DName, department.Email, login.UserName FROM department INNER JOIN login on department.did=login.did where login.did =$did";
           $result = mysqli_query($conn,$sql);
           $row = mysqli_fetch_array($result)
           ?>
@@ -140,7 +140,7 @@
                 placeholder="Enter username"
                 name="UserName"
                 id="user"
-                value="<?php echo $row["Username"] ?>"
+                value="<?php echo $row["UserName"] ?>"
                 
                
               />

@@ -63,6 +63,7 @@
         <div id="errormsg"></div>
         <div class="form-group">
           <label for="text1">Name of Student</label><br>
+          <input type="hidden" name="type" value="user" />
           <input type="text" class="form-control px-2" id="ename" name="StudentName" placeholder="Enter Name" />
           <br>
           <div class="form-group">

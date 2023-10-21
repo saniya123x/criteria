@@ -7,6 +7,7 @@ $iname = $_POST["InstitutionName"];
 $pname = $_POST["ProgrammeName"];
 //$did = $_POST["did"];
 $did = $_SESSION['did'];
+$type= $_POST["type"];
 // Check file size
 if ($_FILES["image"]["size"] > 500000) {
   echo "Sorry, your file is too large.";
@@ -22,7 +23,12 @@ if (mysqli_query($conn, $sql)) {
   if (move_uploaded_file($_FILES["image"]["tmp_name"], $target)) {
     $sql1= " UPDATE progression set Upload= 'progression-" . $lastid . "." . $FileType ."' WHERE PRID = $lastid" ;
        mysqli_query($conn, $sql1);
-  header("location:../users/tableuserpro.php");
+       if ($type == "admin") {
+
+        header("location:../admin/tableadminplace.php");
+      } else {
+        header("location:../users/tableuserplace.php");
+      }
   }
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
