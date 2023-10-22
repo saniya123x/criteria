@@ -6,8 +6,8 @@ $name = $_POST["DName"];
 $email = $_POST["Email"];
 $lastid = "";
 
-$sql1 = "INSERT INTO department (Dname,Email,UserName)
-VALUES ('$name', '$email', '$user')";
+$sql1 = "INSERT INTO department (Dname,Email)
+VALUES ('$name', '$email')";
 
 if (mysqli_query($conn, $sql1)) {
     $lastid = mysqli_insert_id($conn);

@@ -42,14 +42,8 @@ include '../api/dbcon.php';
           </ol>
           <h6 class="font-weight-bolder mb-0">Department</h6>
         </nav>
-        
-             
-                
-                 
-                </li>
-              </ul>
-            </li>
-          </ul>
+        <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;Logout</a>
+
         </div>
       </div>
     </nav>
