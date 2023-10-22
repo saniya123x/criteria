@@ -56,7 +56,9 @@
           </ol>
           <h6 class="font-weight-bolder mb-0">PLACEMENT</h6>
         </nav>
+        <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;logout</a>
     </nav>
+</div>
     <!-- End Navbar -->
     <div class="container p-4">
       <form action="../api/addplacement.php" method="POST" enctype="multipart/form-data" onsubmit="return formValidate()">
