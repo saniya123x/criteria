@@ -42,15 +42,7 @@ include '../api/dbcon.php';
           </ol>
           <h6 class="font-weight-bolder mb-0">Placement</h6>
         </nav>
-
-
-
-
-        </li>
-        </ul>
-        </li>
-        </ul>
-      </div>
+        <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;logout</a>
       </div>
     </nav>
     <!-- End Navbar -->
@@ -81,7 +73,7 @@ include '../api/dbcon.php';
                     </thead>
                     <tbody>
                       <?php
-                      $sql = "SELECT * FROM placement";
+                       $sql = 'SELECT * FROM placement where did=$_SESSION["did"]';
                       $result = mysqli_query($conn, $sql);
                       while ($row = mysqli_fetch_array($result)) {
                       ?>

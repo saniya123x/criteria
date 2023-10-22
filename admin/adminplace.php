@@ -66,7 +66,8 @@
             </ol>
             <h6 class="font-weight-bolder mb-0">PLACEMENT</h6>
           </nav>
-          
+         <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;Logout</a>
+
         </div>
       </nav>
     <!-- End Navbar -->
@@ -106,7 +107,7 @@
           <input type="number" class="form-control px-2" id="payid" name="PayPackage" placeholder="enter pay package" />
         </div>
         <div class="form-group">
-          <label for="eimage">Upload certificate</label>
+          <label for="eimage">Upload image</label>
           <input type="file" name="image" accept="image/png , image/jpeg" class="form-control" id="eimage" />
         </div>
         <div class="modal-footer border-top-0 d-flex justify-content-center">
@@ -285,6 +286,11 @@ const file = document.getElementById("eimage");
       if (pay.value == "") {
         pay.focus();
         document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>'
+        return false;
+      }
+      if(choosefile.value == ""){
+        choosefile.focus();
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please upload image</div>'
         return false;
       }
     }

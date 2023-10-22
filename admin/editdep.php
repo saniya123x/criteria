@@ -86,7 +86,8 @@
             </ol>
             <h6 class="font-weight-bolder mb-0">Department Details</h6>
           </nav>
-          
+          <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;Logout</a>
+
         </div>
       </nav>
       <!-- End Navbar -->

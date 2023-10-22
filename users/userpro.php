@@ -55,7 +55,7 @@
           </ol>
           <h6 class="font-weight-bolder mb-0">PROGRESSION</h6>
         </nav>
-
+        <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;logout</a>
       </div>
     </nav>
     <!-- End Navbar -->
