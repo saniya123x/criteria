@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
   <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
-  <title>Saniya</title>
+  <title>Admin-Placement</title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
@@ -82,11 +82,11 @@
         </div>
         <div class="form-group">
           <label for="pid">Enter Student Phone Number</label><br>
-          <input type="tel" class="form-control px-2" id="pid" name="Scontact" placeholder="enter number" />
+          <input type="number" class="form-control px-2" id="pid" name="Scontact" placeholder="enter number" />
         </div>
         <div class="form-group">
           <label for="year2">Year</label>
-          <input type="number" class="form-control px-2" id="year2" name="Year" placeholder="Enter year" />
+          <input type="number" class="form-control px-2" min=2000 max=2100 id="year2" name="Year" placeholder="Enter year" />
         </div>
         <div class="form-group">
           <label for="programid">Program Graduated From</label>
@@ -100,7 +100,7 @@
         </div>
         <div class="form-group">
           <label for="pid1">Enter Employer Phone Number</label><br>
-          <input type="tel" class="form-control px-2" id="pid1" name="Econtact" placeholder="enter phone number" /><br>
+          <input type="number" class="form-control px-2" id="pid1" name="Econtact" placeholder="enter phone number" /><br>
         </div>
         <div class="form-group">
           <label for="payid">Pay Package at Appoinment </label>
@@ -228,11 +228,11 @@ const file = document.getElementById("eimage");
         var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
         if (!allowedExtensions.exec(filePath)) {
           file.value = "";
-          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">This is Not an image file </div>'
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">This is Not an image file </div>'
           return false;
         }
         if (file.files[0].size > 500000) {
-          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Size of file is too large </div>'
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Size of file is too large </div>'
           file.value="";
           return false;
         }
@@ -254,43 +254,43 @@ const file = document.getElementById("eimage");
       console.log(name);
       if (name.value == "") {
         name.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the name</div>'
         return false;
       }
 
-      if (phone.value == "") {
+      if (phone.value == "" || ephone.value.length !=10) {
         phone.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out or check your phone number</div>'
         return false;
       }
-      if (year.value == "") {
+      if (year.value == "" || year.value.length !=4) {
         year.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please  check or fill out the year</div>'
         return false;
       }
       if (program.value == "") {
         program.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the program Graduated from</div>'
         return false;
       }
       if (ename.value == "") {
         ename.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Employee name</div>'
         return false;
       }
-      if (ephone.value == "") {
+      if (ephone.value == "" || ephone.value.length !=10) {
         ephone.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out or check your phone number</div>'
         return false;
       }
       if (pay.value == "") {
         pay.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the package</div>'
         return false;
       }
       if(choosefile.value == ""){
         choosefile.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please upload image</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">lease upload image</div>'
         return false;
       }
     }

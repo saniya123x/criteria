@@ -26,7 +26,7 @@
       href="../assets/img/apple-icon.png"
     />
     <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
-    <title>Saniya</title>
+    <title>Department-Details</title>
     <!--     Fonts and icons     -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
@@ -134,11 +134,12 @@
                 <label for="text4">Password </label>
                 <input
                 type="password"
-                  class="form-control px-1"
+                  class="form-control px-1 "
                   placeholder="Enter Password"
                   name="Password"
                   id="pass"
                   />
+
             </div>
             <div class="form-group">
                 <label for="text5">Confirm Password </label>
@@ -301,33 +302,33 @@
 
        if(department.value==""){
         department.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger text-white" role="alert">Please fill out the department name</div>';
         return false;
        }
        if(email.value==""){
         email.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
-        return false;
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger text-white" role="alert">Please check or fill out the Email</div>';
+       return false;
        }
        if(UserName.value==""){
         UserName.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger text-white" role="alert">Please fill out the Username</div>';
         return false;
        }
        if(password.value==""){
         password.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger text-white" role="alert">Please fill out the Password</div>';
         return false;
        }
        if(Cpassword.value==""){
         Cpassword.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger text-white" role="alert">Please check out the Password Again</div>';
         return false;
        }
        if(password.value!=Cpassword.value){
         Cpassword.focus();
         password.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">password does not match</div>';
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger text-white" role="alert">password does not match</div>';
         return false;
       }
     }
