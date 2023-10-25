@@ -43,7 +43,7 @@ include '../api/dbcon.php';
           <h6 class="font-weight-bolder mb-0">Placement</h6>
         </nav>
         <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;Logout</a>
-
+        
       </div>
     </nav>
     <!-- End Navbar -->
@@ -54,7 +54,14 @@ include '../api/dbcon.php';
             <div class="card-header pb-0">
             <div class="d-flex justify-content-between">
               <h6>Placement Table</h6>
+              <div class="d-flex justify-content-end">
+                  <div>
+              <a class="btn bg-gradient-success mb-0" href="../api/excelplace.php"> <i class="fa fa-file-excel-o fa-2x" aria-hidden="true"></i>  Download</a>
+              </div>
+                  <div class="ms-3">
               <a class="btn bg-gradient-dark mb-0" href="adminplace.php"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add</a>
+            </div>
+            </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">

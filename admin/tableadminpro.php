@@ -43,6 +43,8 @@ include '../api/dbcon.php';
           <h6 class="font-weight-bolder mb-0">Progression</h6>
         </nav>
         <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;Logout</a>
+
+
       </div>
     </nav>
     <!-- End Navbar -->
@@ -51,77 +53,86 @@ include '../api/dbcon.php';
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-            <div class="d-flex justify-content-between">
-              <h6>Progression  Table</h6>
-              <a class="btn bg-gradient-dark mb-0" href="adminpro.php"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add</a>
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of student</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">program graduated from</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of institution  joined</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name of programme admitted to</th>
-                      <th class="text-secondary opacity-7"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <?php
-                    $sql="SELECT * FROM progression";
-                    $result = mysqli_query($conn,$sql);
-                    while ($row = mysqli_fetch_array($result)) {
-                      ?>
-                    <tr>
-                    <td class="align-middle text-center text-sm">
-                      <h6 class="mb-0 text-sm"><?php echo $row["Sname"] ?></h6>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                      <h6 class="mb-0 text-sm"><?php echo $row["ProgramGraduated"] ?></h6>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                      <h6 class="mb-0 text-sm"><?php echo $row["InstitutionName"] ?></h6>
-                      </td>
-                      <td class="align-middle text-center">
-                        <h6><span class=" text-xs font-weight-bold "><?php echo $row["ProgrammeName"] ?></span><h6>
-                      </td>
-                      
-                      <td class="align-middle">
-                      <a class="btn btn-link text-dark px-3 mb-0" href="editadminpro.php?prid=<?php echo $row['PRID'] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                      </td> 
-                
-                    <td class="align-middle">
-                    <div class="ms-auto text-end">
-                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="../api/deleteprgrsn.php?PRID=<?php echo $row['PRID'] ?>&type=admin"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                    
+              <div class="d-flex justify-content-between">
+                <h6>Progression Table</h6>
+                <div class="d-flex justify-content-end">
+                  <div>
+                    <a class="btn bg-gradient-success mb-0" href="../api/excelpro.php"> <i class="fa fa-file-excel-o fa-2x" aria-hidden="true"></i>  Download</a>
                   </div>
-                      </td> 
-</tr>
-                    </tr>
-                    <?php
-                    }
-                    ?>
-                  </tbody>
-                </table>
+                  <div class="ms-3">
+                    <a class="btn bg-gradient-dark mb-0" href="adminpro.php"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add</a>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive p-0">
+                  <table class="table align-items-center mb-0">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of student</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">program graduated from</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">name of institution joined</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name of programme admitted to</th>
+                        <th class="text-secondary opacity-7"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                      $sql = "SELECT * FROM progression";
+                      $result = mysqli_query($conn, $sql);
+                      while ($row = mysqli_fetch_array($result)) {
+                      ?>
+                        <tr>
+                          <td class="align-middle text-center text-sm">
+                            <h6 class="mb-0 text-sm"><?php echo $row["Sname"] ?></h6>
+                          </td>
+                          <td class="align-middle text-center text-sm">
+                            <h6 class="mb-0 text-sm"><?php echo $row["ProgramGraduated"] ?></h6>
+                          </td>
+                          <td class="align-middle text-center text-sm">
+                            <h6 class="mb-0 text-sm"><?php echo $row["InstitutionName"] ?></h6>
+                          </td>
+                          <td class="align-middle text-center">
+                            <h6><span class=" text-xs font-weight-bold "><?php echo $row["ProgrammeName"] ?></span>
+                              <h6>
+                          </td>
+
+                          <td class="align-middle">
+                            <a class="btn btn-link text-dark px-3 mb-0" href="editadminpro.php?prid=<?php echo $row['PRID'] ?>"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                          </td>
+
+                          <td class="align-middle">
+                            <div class="ms-auto text-end">
+                              <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="../api/deleteprgrsn.php?PRID=<?php echo $row['PRID'] ?>&type=admin"><i class="far fa-trash-alt me-2"></i>Delete</a>
+
+                            </div>
+                          </td>
+                        </tr>
+                        </tr>
+                      <?php
+                      }
+                      ?>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-      </div>
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              
-            </div>
-            
-          </div>
+        <div class="row">
         </div>
-      </footer>
-    </div>
+        <footer class="footer pt-3  ">
+          <div class="container-fluid">
+            <div class="row align-items-center justify-content-lg-between">
+              <div class="col-lg-6 mb-lg-0 mb-4">
+
+              </div>
+
+            </div>
+          </div>
+        </footer>
+      </div>
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
