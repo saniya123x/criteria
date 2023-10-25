@@ -211,7 +211,7 @@
 
       if (stname.value == "") {
         stname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Fill The Name!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text -white" role="alert">Fill The Name!</div>'
         return false;
       }
       if (phid.value == "" || phid.value.length!=10) {
