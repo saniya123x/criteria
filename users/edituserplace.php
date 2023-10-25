@@ -66,9 +66,6 @@
           <?php
           include '../api/dbcon.php';
           $pid = $_GET["pid"];
-
-
-
           $sql = "SELECT * FROM placement where PID=$pid";
           $result = mysqli_query($conn, $sql);
           $row = mysqli_fetch_array($result)
