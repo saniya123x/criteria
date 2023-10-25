@@ -172,11 +172,11 @@
         var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
         if (!allowedExtensions.exec(filePath)) {
           fileInput.value = "";
-          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> It is not image file</div>'
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> It Is Not Image File</div>'
           return false;
         }
         if (fileInput.files[0].size > 500000) {
-          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Uploaded image is too large</div>'
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Uploaded Image Is Too Large</div>'
           fileInput.value = "";
           return false;
         }
@@ -193,30 +193,30 @@
       const choosefile = document.getElementById("eimage");
       if (sname.value == "") {
         sname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Fill The Name Of Student!</div>'
         return false;
       }
 
       if (program.value == "") {
         program.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Fill The Program Graduated From!</div>'
         return false;
       }
 
       if (instname.value == "") {
         instname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Fill The Name Of Institution Joined!</div>'
         return false;
       }
 
       if (promname.value == "") {
         promname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Please fill all the fields</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Fill The Name Of Programme Admitted To!</div>'
         return false;
       }
       if (choosefile.value == "") {
         choosefile.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Select a file</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Select A File</div>'
         return false;
       }
     }
