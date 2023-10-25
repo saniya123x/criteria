@@ -207,22 +207,22 @@
 
       if (username.value == "") {
         username.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">please fill out the username</div>';
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Username</div>';
         return false;
       }
       if (program.value == "") {
         program.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">please fill out the program graduated from</div>';
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Program Graduated From</div>';
         return false;
       }
       if (institution.value == "") {
         institution.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">please fill out the institution name</div>';
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Institution Name</div>';
         return false;
       }
       if (pgmadmitted.value == "") {
         pgmadmitted.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">please fill out the admitted program</div>';
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Admitted Program</div>';
         return false;
       }
       if (choosefile.value == "") {

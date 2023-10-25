@@ -260,37 +260,37 @@ const file = document.getElementById("eimage");
 
       if (phone.value == "" || ephone.value.length !=10) {
         phone.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out or check your phone number</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out or check your Phone Number</div>'
         return false;
       }
       if (year.value == "" || year.value.length !=4) {
         year.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please  check or fill out the year</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please  check or fill out the Year</div>'
         return false;
       }
       if (program.value == "") {
         program.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the program Graduated from</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the program Graduated From</div>'
         return false;
       }
       if (ename.value == "") {
         ename.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Employee name</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Employee Name</div>'
         return false;
       }
       if (ephone.value == "" || ephone.value.length !=10) {
         ephone.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out or check your phone number</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out or check your Phone Number</div>'
         return false;
       }
       if (pay.value == "") {
         pay.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the package</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Package</div>'
         return false;
       }
       if(choosefile.value == ""){
         choosefile.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">lease upload image</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">lease Upload Image</div>'
         return false;
       }
     }
