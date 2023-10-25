@@ -290,7 +290,7 @@ const file = document.getElementById("eimage");
       }
       if(choosefile.value == ""){
         choosefile.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please upload image</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">lease upload image</div>'
         return false;
       }
     }
