@@ -25,9 +25,9 @@ if (mysqli_query($conn, $sql)) {
        mysqli_query($conn, $sql1);
        if ($type == "admin") {
 
-        header("location:../admin/tableadminplace.php");
+        header("location:../admin/tableadminpro.php");
       } else {
-        header("location:../users/tableuserplace.php");
+        header("location:../users/tableuserpro.php");
       }
   }
 } else {
