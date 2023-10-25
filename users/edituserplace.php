@@ -80,7 +80,7 @@
             <br>
             <div class="form-group">
               <label for="phone">Enter Student Phone Number</label><br>
-              <input type="tel" class="form-control px-2" id="pid" name="Scontact" placeholder="enter number" value="<?php echo $row["Scontact"] ?> " />
+              <input type="number" class="form-control px-2" id="pid" name="Scontact" placeholder="enter number" value="<?php echo $row["Scontact"] ?> " />
             </div>
             <div class="form-group">
               <label for="year2">Year</label>
@@ -95,14 +95,14 @@
                 <input type="text" class="form-control px-2" id="empid" name="EmployerName" placeholder="enter name of employer" value="<?php echo $row["EmployerName"] ?>" /><br>
                 <div class="form-group">
                   <label for="phone">Enter Employer Phone Number</label><br>
-                  <input type="tel" class="form-control px-2" id="pid1" name="Econtact" placeholder="enter phone number" value="<?php echo $row["Econtact"] ?>" /><br>
+                  <input type="number" class="form-control px-2" id="pid1" name="Econtact" placeholder="enter phone number" value="<?php echo $row["Econtact"] ?>" /><br>
                   <div class="form-group">
                     <label for="text1">Pay Package at Appoinment </label>
                     <input type="number" class="form-control px-2" id="payid" name="PayPackage" placeholder="enter pay package" value="<?php echo $row["PayPackage"] ?>" />
                   </div>
                   <div class="form-group">
                     <label for="file1">Upload certificate</label>
-                    <input type="file" name="image" accept="application/pdf" class="form-control" id="eimage" />
+                  <input type="file" name="image" accept="image/png, image/jpeg" class="form-control" id="eimage" />
                   </div>
                 </div>
                 <div class="modal-footer border-top-0 d-flex justify-content-center">
@@ -217,39 +217,47 @@
       const empname = document.getElementById("empid");
       const empphno = document.getElementById("pid1");
       const paypackap = document.getElementById("payid");
+      const choosefile = document.getElementById("eimage");
       if (stname.value == "") {
         stname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text -white" role="alert">Fill The Name!</div>'
         return false;
       }
-      if (phid.value == "") {
+      if (phid.value == "" || phid.value.length != 10) {
         phid.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text -white" role="alert">Fill The Phonenumber(Max of 10)!</div>'
         return false;
       }
-      if (year.value == "") {
+      if (year.value == "" || year.value.length != 4) {
         year.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text -white" role="alert">Fill The Year!</div>'
         return false;
       }
       if (prograform.value == "") {
         prograform.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text -white" role="alert">Fill The Program Graduated From!</div>'
         return false;
       }
       if (empname.value == "") {
         empname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text -white" role="alert">Fill The Name Of Employer!</div>'
         return false;
       }
       if (empphno.value == "") {
         empphno.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text -white" role="alert">Fill The Phonenumber Of Employer!</div>'
         return false;
       }
       if (paypackap.value == "") {
         paypackap.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">FILL ALL THE FIELDS!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text -white" role="alert">Fill The Pay Package At Appointment!</div>'
+        return false;
+
+
+      }
+      if (choosefile.value == "") {
+        choosefile.focus();
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert"> Select A File</div>'
         return false;
       }
     }
