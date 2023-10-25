@@ -73,7 +73,8 @@ include '../api/dbcon.php';
                     </thead>
                     <tbody>
                       <?php
-                       $sql = 'SELECT * FROM placement where did=$_SESSION["did"]';
+                      $user =$_SESSION["did"];
+                       $sql = "SELECT * FROM placement where did ='$user'";
                       $result = mysqli_query($conn, $sql);
                       while ($row = mysqli_fetch_array($result)) {
                       ?>

@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
   <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
-  <title>Saniya</title>
+  <title>Placement</title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
@@ -70,11 +70,11 @@
           <br>
           <div class="form-group">
             <label for="phone">Enter Student Phone Number</label><br>
-            <input type="tel" class="form-control px-2" id="pid" name="Scontact" placeholder="enter number" />
+            <input type="number" class="form-control px-2" id="pid" name="Scontact" placeholder="enter number" />
           </div>
           <div class="form-group">
             <label for="year2">Year</label>
-            <input type="number" class="form-control px-2" id="year2" name="Year" placeholder="Enter year" />
+            <input type="number" min="2000" max="2100" class="form-control px-2" id="year2" name="Year" placeholder="Enter year" />
           </div>
           <div class="form-group">
             <label for="text1">Program Graduated From</label>
@@ -85,14 +85,14 @@
               <input type="text" class="form-control px-2" id="empid" name="EmployerName" placeholder="enter name of employer" /><br>
               <div class="form-group">
                 <label for="phone">Enter Employer Phone Number</label><br>
-                <input type="tel" class="form-control px-2" id="pid1" name="Econtact" placeholder="enter phone number" /><br>
+                <input type="number" class="form-control px-2" id="pid1" name="Econtact" placeholder="enter phone number" /><br>
                 <div class="form-group">
                   <label for="text1">Pay Package at Appoinment </label>
                   <input type="number" class="form-control px-2" id="payid" name="PayPackage" placeholder="enter pay package" />
                 </div>
                 <div class="form-group">
                   <label for="file1">Upload certificate</label>
-                  <input type="file" name="image" accept="application/pdf" class="form-control" id="eimage" />
+                  <input type="file" name="image" accept="image/png, image/jpeg" class="form-control" id="eimage" />
                 </div>
               </div>
               <div class="modal-footer border-top-0 d-flex justify-content-center">
@@ -207,44 +207,46 @@
       const empname = document.getElementById("empid");
       const empphno = document.getElementById("pid1");
       const paypackap = document.getElementById("payid");
+      const choosefile = document.getElementById("eimage");
+
       if (stname.value == "") {
         stname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Fill The Name!</div>'
         return false;
       }
-      if (phid.value == "") {
+      if (phid.value == "" || phid.value.length!=10) {
         phid.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Fill The Correct Phone Number(max of 10)!</div>'
         return false;
       }
-      if (year.value == "") {
+      if (year.value == "" || year.value.length!=4) {
         year.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Fill The Year!</div>'
         return false;
       }
       if (prograform.value == "") {
         prograform.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Fill The Program Gruated From!</div>'
         return false;
       }
       if (empname.value == "") {
         empname.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Fill The Name 0f Employer!</div>'
         return false;
       }
       if (empphno.value == "") {
         empphno.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Fill The Phno Of Employer!</div>'
         return false;
       }
       if (paypackap.value == "") {
         paypackap.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Fill all the fields!</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Fill The Pay Package At Appointment!</div>'
         return false;
       }
       if (choosefile.value == "") {
         choosefile.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert"> Select a file</div>'
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert"> Select A File</div>'
         return false;
       }
     }

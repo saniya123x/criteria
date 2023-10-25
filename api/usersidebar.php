@@ -61,7 +61,7 @@
                                        </g>
                                    </svg>
                                </div>
-                               <span class="nav-link-text ms-1">PlacemantTable</span>
+                               <span class="nav-link-text ms-1">PlacementTable</span>
                            </a>
                        </li>
                        
