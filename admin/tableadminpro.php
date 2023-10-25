@@ -10,7 +10,7 @@ include '../api/dbcon.php';
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
-    Soft UI Dashboard by Creative Tim
+    Admin-Progression
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -43,7 +43,6 @@ include '../api/dbcon.php';
           <h6 class="font-weight-bolder mb-0">Progression</h6>
         </nav>
         <a class="btn bg-gradient-danger mb-0" href="../api/logout.php">&nbsp;&nbsp;Logout</a>
-
       </div>
     </nav>
     <!-- End Navbar -->

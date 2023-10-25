@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
   <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
-  <title>Saniya</title>
+  <title>Admin-Progression</title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
@@ -195,11 +195,11 @@
         var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
         if (!allowedExtensions.exec(filePath)) {
           file.value = "";
-          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">This is Not an image file </div>'
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">This is Not an image file </div>'
           return false;
         }
         if (file.files[0].size > 500000) {
-          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Size of file is too large </div>'
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Size of file is too large </div>'
           file.value="";
           return false;
         }
@@ -215,22 +215,22 @@
 
       if (username.value == "") {
         username.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Username</div>';
         return false;
       }
       if (program.value == "") {
         program.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Program Graduated From</div>';
         return false;
       }
       if (institution.value == "") {
         institution.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Institution Name</div>';
         return false;
       }
       if (pgmadmitted.value == "") {
         pgmadmitted.focus();
-        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Please fill out the Program Admitted</div>';
         return false;
       }
   }

@@ -26,7 +26,7 @@
       href="../assets/img/apple-icon.png"
     />
     <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
-    <title>Saniya</title>
+    <title>Department</title>
     <!--     Fonts and icons     -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
@@ -296,11 +296,11 @@
         var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
         if (!allowedExtensions.exec(filePath)) {
           file.value = "";
-          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">This is Not an image file </div>'
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">This is Not an image file </div>'
           return false;
         }
         if (file.files[0].size > 500000) {
-          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger" role="alert">Size of file is too large </div>'
+          document.getElementById("errormsg").innerHTML = '<div class="alert alert-danger text-white" role="alert">Size of file is too large </div>'
           file.value="";
           return false;
         }
@@ -316,17 +316,17 @@
 
        if(department.value==""){
         department.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger text-white" role="alert">Please fill out the Department Name</div>';
         return false;
        }
        if(email.value==""){
         email.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger text-white" role="alert">Please  check or fill out the Email</div>';
         return false;
        }
        if(username.value==""){
         username.focus();
-        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger" role="alert">please fill out the field</div>';
+        document.getElementById("errormsg").innerHTML='<div class="alert alert-danger text-white" role="alert">Please fill out the Username</div>';
         return false;
        }
       
