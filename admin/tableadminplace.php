@@ -55,11 +55,17 @@ include '../api/dbcon.php';
             <div class="d-flex justify-content-between">
               <h6>Placement Table</h6>
               <div class="d-flex justify-content-end">
-                  <div>
-              <a class="btn bg-gradient-success mb-0" href="../api/excelplace.php"> <i class="fa fa-file-excel-o fa-2x" aria-hidden="true"></i>  Download</a>
+                <div class="ms-3">
+
+                <a class="btn bg-gradient-info mb-0" href="../api/pdfplace.php"> <i class="fa fa-download" aria-hidden="true"></i>  DOCUMENT</a>
+
+               </div>
+                 <div class="ms-3">
+
+              <a class="btn bg-gradient-success mb-0" href="../api/excelplace.php"> <i class="fa fa-download" aria-hidden="true"></i>  EXCEL</a>
               </div>
                   <div class="ms-3">
-              <a class="btn bg-gradient-dark mb-0" href="adminplace.php"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add</a>
+              <a class="btn bg-gradient-dark mb-0" href="adminplace.php"><i class="fas fa-plus"></i>&nbsp;&nbsp;ADD</a>
             </div>
             </div>
             </div>
